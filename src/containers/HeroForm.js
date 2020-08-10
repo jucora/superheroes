@@ -1,12 +1,13 @@
-import React from "react";
-import { connect } from "react-redux";
-import { updateHeroes } from "../actions/index";
-import heroApi from "../api/heroApi";
+import React from 'react';
+import { connect } from 'react-redux';
+import Proptypes from 'prop-types';
+import { updateHeroes } from '../actions/index';
+import heroApi from '../api/heroApi';
 
 class HeroForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { heroName: "" };
+    this.state = { heroName: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,8 +19,8 @@ class HeroForm extends React.Component {
   handleSubmit() {
     const { updateHeroes } = this.props;
     const { heroName } = this.state;
-    if (heroName === "") return;
-    heroApi.getByName(heroName).then((data) => {
+    if (heroName === '') return;
+    heroApi.getByName(heroName).then(data => {
       if (data) {
         updateHeroes(data);
       }
@@ -56,8 +57,12 @@ class HeroForm extends React.Component {
   }
 }
 
-const matchDispatchToProps = (dispatch) => ({
-  updateHeroes: (results) => {
+HeroForm.propTypes = {
+  updateHeroes: Proptypes.func.isRequired,
+};
+
+const matchDispatchToProps = dispatch => ({
+  updateHeroes: results => {
     dispatch(updateHeroes(results));
   },
 });

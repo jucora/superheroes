@@ -1,4 +1,4 @@
-import { UPDATE_HEROES, UPDATE } from "../actions/index";
+import { UPDATE_HEROES, UPDATE } from '../actions/index';
 
 const initialState = {
   heroResults: [],
@@ -11,7 +11,6 @@ const heroReducer = (state = initialState, action) => {
         heroResults: action.payload,
       };
     case UPDATE:
-      console.log("entrando");
       return state;
     default:
       return state;

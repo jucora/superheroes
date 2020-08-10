@@ -1,44 +1,86 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const HeroDetails = (props) => {
-  const { option } = props.location.state;
-  const { id } = props.match.params; // Location index
+const HeroDetails = props => {
+  const { location } = props;
+  const { option } = location.state;
+  const { match } = props;
+  const { id } = match.params; // Location index
   const { heroResults } = props;
   const currentHero = heroResults[id];
 
   const createOptionResults = () => {
-    const appearance = currentHero.appearance;
-    if (option === "appearance") {
+    const { appearance } = currentHero;
+    const { gender } = appearance;
+    if (option === 'appearance') {
       return (
         <div>
-          <td>Gender: {appearance.gender}</td>
-          <td>Eye Color: {appearance["eye-color"]}</td>
-          <td>Hair Color: {appearance["hair-color"]}</td>
-          <td>Height: {appearance.height[0] + " - " + appearance.height[1]}</td>
-          <td>Race: {appearance.race}</td>
-          <td>weight: {appearance.weight[0] + " - " + appearance.weight[1]}</td>
+          <p>
+            Gender:
+            {gender}
+          </p>
+          <p>
+            Eye Color:
+            {appearance['eye-color']}
+          </p>
+          <p>
+            Hair Color:
+            {appearance['hair-color']}
+          </p>
+          <p>
+            Height:
+            {`${appearance.height[0]} - ${appearance.height[1]}`}
+          </p>
+          <p>
+            Race:
+            {appearance.race}
+          </p>
+          <p>
+            weight:
+            {`${appearance.weight[0]} - ${appearance.weight[1]}`}
+          </p>
         </div>
       );
-    } else if (option === "biography") {
-      const biography = currentHero.biography;
+    }
+    if (option === 'biography') {
+      const { biography } = currentHero;
       return (
         <div>
           <p>
             Aliases:
-            {biography.aliases.forEach((alias) => ({
+            {biography.aliases.forEach(alias => ({
               alias,
             }))}
           </p>
-          <p>Alignment: {biography.alignment}</p>
-          <p>Alter-egos: {biography["alter-egos"]}</p>
-          <p>First-appearance: {biography["first-appearance"]}</p>
-          <p>Full-name: {biography["full-name"]}</p>
-          <p>Place-of-birth: {biography["place-of-birth"]}</p>
-          <p>Publisher: {biography.publisher}</p>
+          <p>
+            Alignment:
+            {biography.alignment}
+          </p>
+          <p>
+            Alter-egos:
+            {biography['alter-egos']}
+          </p>
+          <p>
+            First-appearance:
+            {biography['first-appearance']}
+          </p>
+          <p>
+            Full-name:
+            {biography['full-name']}
+          </p>
+          <p>
+            Place-of-birth:
+            {biography['place-of-birth']}
+          </p>
+          <p>
+            Publisher:
+            {biography.publisher}
+          </p>
         </div>
       );
     }
+    return null;
   };
 
   return (
@@ -55,7 +97,17 @@ const HeroDetails = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+HeroDetails.propTypes = {
+  heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.any).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+};
+
+const mapStateToProps = state => ({
   heroResults: state.heroReducer.heroResults,
 });
 
