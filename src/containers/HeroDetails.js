@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const HeroDetails = props => {
+const HeroDetails = (props) => {
   const { location } = props;
   const { option } = location.state;
   const { match } = props;
@@ -13,70 +13,34 @@ const HeroDetails = props => {
   const createOptionResults = () => {
     const { appearance } = currentHero;
     const { gender } = appearance;
-    if (option === 'appearance') {
+    if (option === "appearance") {
       return (
         <div>
-          <p>
-            Gender:
-            {gender}
-          </p>
-          <p>
-            Eye Color:
-            {appearance['eye-color']}
-          </p>
-          <p>
-            Hair Color:
-            {appearance['hair-color']}
-          </p>
-          <p>
-            Height:
-            {`${appearance.height[0]} - ${appearance.height[1]}`}
-          </p>
-          <p>
-            Race:
-            {appearance.race}
-          </p>
-          <p>
-            weight:
-            {`${appearance.weight[0]} - ${appearance.weight[1]}`}
-          </p>
+          <p>Gender: {gender}</p>
+          <p>Eye Color: {appearance["eye-color"]}</p>
+          <p>Hair Color: {appearance["hair-color"]}</p>
+          <p>Height: {`${appearance.height[0]} - ${appearance.height[1]}`}</p>
+          <p>Race: {appearance.race}</p>
+          <p>weight: {`${appearance.weight[0]} - ${appearance.weight[1]}`}</p>
         </div>
       );
     }
-    if (option === 'biography') {
+    if (option === "biography") {
       const { biography } = currentHero;
       return (
         <div>
           <p>
-            Aliases:
-            {biography.aliases.forEach(alias => ({
+            Aliases:{" "}
+            {biography.aliases.forEach((alias) => ({
               alias,
             }))}
           </p>
-          <p>
-            Alignment:
-            {biography.alignment}
-          </p>
-          <p>
-            Alter-egos:
-            {biography['alter-egos']}
-          </p>
-          <p>
-            First-appearance:
-            {biography['first-appearance']}
-          </p>
-          <p>
-            Full-name:
-            {biography['full-name']}
-          </p>
-          <p>
-            Place-of-birth:
-            {biography['place-of-birth']}
-          </p>
-          <p>
-            Publisher:
-            {biography.publisher}
-          </p>
+          <p>Alignment: {biography.alignment}</p>
+          <p>Alter-egos: {biography["alter-egos"]}</p>
+          <p>First-appearance: {biography["first-appearance"]}</p>
+          <p>Full-name: {biography["full-name"]}</p>
+          <p>Place-of-birth: {biography["place-of-birth"]}</p>
+          <p>Publisher: {biography.publisher}</p>
         </div>
       );
     }
@@ -86,10 +50,9 @@ const HeroDetails = props => {
   return (
     <div className="optionInfo">
       <div className="left">
-        <div>{currentHero.name}</div>
-        <div>
-          <img src={currentHero.image.url} alt={currentHero.name} />
-        </div>
+        <p>{currentHero.name}</p>
+
+        <img src={currentHero.image.url} alt={currentHero.name} />
       </div>
 
       <div className="right">{createOptionResults()}</div>
@@ -107,7 +70,7 @@ HeroDetails.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
 });
 

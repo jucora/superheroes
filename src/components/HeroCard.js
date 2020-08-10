@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function HeroCard(props) {
   const { id, name, image } = props;
@@ -9,22 +9,23 @@ function HeroCard(props) {
       <div className="cardImageContainer">
         <h1>{name}</h1>
         <img src={image} width="300" height="300" alt={`${name}`} />
+        <hr />
 
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: 'appearance' } }}
-          style={{ textDecoration: 'none' }}
+          to={{ pathname: `/details/${id}`, state: { option: "appearance" } }}
+          style={{ textDecoration: "none" }}
         >
           <button type="button">Appearance</button>
         </Link>
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: 'biography' } }}
-          style={{ textDecoration: 'none' }}
+          to={{ pathname: `/details/${id}`, state: { option: "biography" } }}
+          style={{ textDecoration: "none" }}
         >
           <button type="button">Biography</button>
         </Link>
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: 'powerstats' } }}
-          style={{ textDecoration: 'none' }}
+          to={{ pathname: `/details/${id}`, state: { option: "powerstats" } }}
+          style={{ textDecoration: "none" }}
         >
           <button type="button">Powerstats</button>
         </Link>
