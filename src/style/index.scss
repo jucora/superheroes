@@ -3,6 +3,146 @@
   padding: 0;
 }
 
+/* ANIMATIONS */
+
+/* LEFT PANEL ANIMATION */
+
+@keyframes leftPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leftPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes leftPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* RIGHT PANEL ANIMATION */
+
+@keyframes rightPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes rightPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@-moz-keyframes rightPanelAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* End Animations */
+
 body {
   background: url("../img//background.jpg");
   background-position: center;
@@ -89,6 +229,9 @@ body {
     padding: 20px;
 
     .left {
+      animation: leftPanelAnimation 2s linear 0s;
+      -webkit-animation: leftpanelanimation 2s linear 0s;
+      -moz-animation: leftpanelanimation 2s linear 0s;
       box-sizing: border-box;
       text-align: center;
       color: #fff;
@@ -96,6 +239,7 @@ body {
       font-size: 28px;
       float: left;
       height: auto;
+      opacity: 1;
       padding: 20px;
       width: 50%;
 
@@ -110,6 +254,10 @@ body {
     }
 
     .right {
+      animation: rightPanelAnimation 5s linear 0s;
+      -webkit-animation: rightpanelanimation 5s linear 0s;
+      -moz-animation: rightpanelanimation 5s linear 0s;
+      display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
