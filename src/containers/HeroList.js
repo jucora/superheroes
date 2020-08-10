@@ -1,5 +1,5 @@
 import React from "react";
-import HeroCard from "./HeroCard";
+import HeroCard from "../components/HeroCard";
 import { connect } from "react-redux";
 import { updateFromReduxStore } from "../actions/index";
 // era funcion, implementar

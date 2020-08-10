@@ -1,12 +1,12 @@
 import React from "react";
 import Title from "./Title";
-import HeroList from "./HeroList";
+import HeroList from "../containers/HeroList";
 import Footer from "./Footer";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Author from "./Author";
-import HeroDetails from "./HeroDetails";
+import HeroDetails from "../containers/HeroDetails";
 
-import HeroForm from "./HeroForm";
+import HeroForm from "../containers/HeroForm";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { updateHeroes } from "../actions/index";
-import heroApi from "../Api/heroApi";
+import heroApi from "../api/heroApi";
 
 class HeroForm extends React.Component {
   constructor(props) {
