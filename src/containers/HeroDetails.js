@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { store } from "../components/App";
 
 const HeroDetails = (props) => {
-  const { location } = props;
-  const { option } = location.state;
+  console.log("state now", store.getState());
+  const { option } = props;
   const { match } = props;
   const { id } = match.params; // Location index
   const { heroResults } = props;
@@ -44,7 +45,7 @@ const HeroDetails = (props) => {
         </div>
       );
     }
-    return null;
+    return true;
   };
 
   return (
@@ -72,6 +73,8 @@ HeroDetails.propTypes = {
 
 const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
+  option: state.heroReducer.option,
+  currentHero: state.heroReducer.currentHero,
 });
 
 export default connect(mapStateToProps, null)(HeroDetails);

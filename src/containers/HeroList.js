@@ -1,25 +1,20 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import HeroCard from '../components/HeroCard';
-import { updateFromReduxStore } from '../actions/index';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import HeroCard from "../components/HeroCard";
 // era funcion, implementar
 class HeroList extends React.Component {
-  componentDidMount() {
-    const { updateFromReduxStore } = this.props;
-    updateFromReduxStore();
-  }
-
   render() {
     const { heroResults } = this.props;
     return (
-      <div className="POPOSList">
+      <div className="heroList">
         {heroResults.map((hero, index) => (
           <HeroCard
             id={index}
             key={hero.id}
             name={hero.name}
             image={hero.image.url}
+            hero={hero}
           />
         ))}
       </div>
@@ -28,18 +23,11 @@ class HeroList extends React.Component {
 }
 
 HeroList.propTypes = {
-  updateFromReduxStore: PropTypes.func.isRequired,
   heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
 });
 
-const matchDispatchToProps = dispatch => ({
-  updateFromReduxStore: () => {
-    dispatch(updateFromReduxStore());
-  },
-});
-
-export default connect(mapStateToProps, matchDispatchToProps)(HeroList);
+export default connect(mapStateToProps, null)(HeroList);

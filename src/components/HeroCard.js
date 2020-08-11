@@ -1,38 +1,73 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { addCurrentHero, addCurrentOption } from "../actions/index";
+import { connect } from "react-redux";
 
 function HeroCard(props) {
-  const { id, name, image } = props;
+  const { id, name, image, addCurrentHero, hero, addCurrentOption } = props;
   return (
-    <div className="POPOSSpace">
+    <div className="heroCard">
       <div className="cardImageContainer">
         <h1>{name}</h1>
         <img src={image} width="300" height="300" alt={`${name}`} />
         <hr />
 
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: "appearance" } }}
+          to={{ pathname: `/details/${id}` }}
           style={{ textDecoration: "none" }}
         >
-          <button type="button">Appearance</button>
+          <button
+            onClick={() => {
+              addCurrentHero(hero);
+              addCurrentOption("appearance");
+            }}
+            type="button"
+          >
+            Appearance
+          </button>
         </Link>
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: "biography" } }}
+          to={{ pathname: `/details/${id}` }}
           style={{ textDecoration: "none" }}
         >
-          <button type="button">Biography</button>
+          <button
+            onClick={() => {
+              addCurrentHero(hero);
+              addCurrentOption("biography");
+            }}
+            type="button"
+          >
+            Biography
+          </button>
         </Link>
         <Link
-          to={{ pathname: `/details/${id}`, state: { option: "powerstats" } }}
+          to={{ pathname: `/details/${id}` }}
           style={{ textDecoration: "none" }}
         >
-          <button type="button">Powerstats</button>
+          <button
+            onClick={() => {
+              addCurrentHero(hero);
+              addCurrentOption("powerstats");
+            }}
+            type="button"
+          >
+            Powerstats
+          </button>
         </Link>
       </div>
     </div>
   );
 }
+
+const matchDispatchToProps = (dispatch) => ({
+  addCurrentHero: (hero) => {
+    dispatch(addCurrentHero(hero));
+  },
+  addCurrentOption: (option) => {
+    dispatch(addCurrentOption(option));
+  },
+});
 
 HeroCard.propTypes = {
   id: PropTypes.number.isRequired,
@@ -40,4 +75,4 @@ HeroCard.propTypes = {
   image: PropTypes.string.isRequired,
 };
 
-export default HeroCard;
+export default connect(null, matchDispatchToProps)(HeroCard);

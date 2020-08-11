@@ -149,7 +149,7 @@ body {
   clear: both;
   height: auto;
 
-  .Title {
+  .title {
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -164,7 +164,7 @@ body {
     text-align: center;
 
     header {
-      .Title-Subtitle {
+      .title-subtitle {
         color: rgba(255, 255, 255, 0.75);
         font-size: 24px;
       }
@@ -189,13 +189,12 @@ body {
     display: flex;
     align-items: center;
     background: rgb(0, 0, 0);
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(248, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 1) 100%
-      );
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(248, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
     justify-content: center;
     margin-bottom: 2rem;
     padding: 20px;
@@ -229,9 +228,11 @@ body {
     padding: 20px;
 
     .left {
+      -webkit-animation: leftPanelAnimation 2s linear 0s;
+      -moz-animation: leftPanelAnimation 2s linear 0s;
+      -ms-animation: leftPanelAnimation 2s linear 0s;
+      -o-animation: leftPanelAnimation 2s linear 0s;
       animation: leftPanelAnimation 2s linear 0s;
-      -webkit-animation: leftpanelanimation 2s linear 0s;
-      -moz-animation: leftpanelanimation 2s linear 0s;
       box-sizing: border-box;
       text-align: center;
       color: #fff;
@@ -254,16 +255,18 @@ body {
     }
 
     .right {
-      animation: rightPanelAnimation 5s linear 0s;
-      -webkit-animation: rightpanelanimation 5s linear 0s;
-      -moz-animation: rightpanelanimation 5s linear 0s;
+      -webkit-animation: rightPanelAnimation 4s linear 0s;
+      -moz-animation: rightPanelAnimation 4s linear 0s;
+      -ms-animation: rightPanelAnimation 4s linear 0s;
+      -o-animation: rightPanelAnimation 4s linear 0s;
+      animation: rightPanelAnimation 4s linear 0s;
       display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
       color: #fff;
       background-color: #000;
-      font-size: 28px;
+      font-size: 34px;
       float: left;
       padding: 20px;
       text-align: center;
@@ -277,14 +280,14 @@ body {
     }
   }
 
-  .POPOSList {
+  .heroList {
     width: calc(100% - 80px);
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
 
-    .POPOSSpace {
+    .heroCard {
       display: flex;
       justify-content: center;
 

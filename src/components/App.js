@@ -1,27 +1,34 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Title from './Title';
-import HeroList from '../containers/HeroList';
-import Footer from './Footer';
-import Author from './Author';
-import HeroDetails from '../containers/HeroDetails';
+import React from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import Title from "./Title";
+import HeroList from "../containers/HeroList";
+import Footer from "./Footer";
+import Author from "./Author";
+import HeroDetails from "../containers/HeroDetails";
+import HeroForm from "../containers/HeroForm";
+import storage from "../localStorage/storage";
+import rootReducer from "../reducers/index";
 
-import HeroForm from '../containers/HeroForm';
+const persistState = storage.loadState();
 
-import rootReducer from '../reducers/index';
+let store = createStore(rootReducer, persistState());
 
-const store = createStore(rootReducer);
+store.subscribe(() => {
+  storage.saveState(store.getState());
+});
+
 const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
         <Title />
-        {window.location.pathname === '/' ? <HeroForm /> : null}
+        {window.location.pathname === "/" ? <HeroForm /> : null}
         <Route exact path="/" component={HeroList} />
         <Route path="/about" component={Author} />
         <Route path="/details/:id" component={HeroDetails} />
+
         <Footer />
       </div>
     </Router>
