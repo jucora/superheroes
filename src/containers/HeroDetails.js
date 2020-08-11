@@ -50,6 +50,9 @@ const HeroDetails = (props) => {
       return (
         <div>
           <p>Combat: {powerstats.combat}</p>
+          <div className="barContainer">
+            <div className={"progressBar"}></div>
+          </div>
           <p>Durability: {powerstats.durability}</p>
           <p>Intelligence: {powerstats.intelligence}</p>
           <p>Power: {powerstats.power}</p>

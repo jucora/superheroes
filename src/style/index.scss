@@ -306,6 +306,18 @@ body {
       p {
         margin-bottom: 10px;
       }
+      .barContainer {
+        background: gray;
+        border-radius: 5%;
+        height: 25px;
+        width: 100%;
+        .progressBar {
+          background-color: aqua;
+
+          height: 25px;
+          z-index: 10;
+        }
+      }
     }
   }
 
