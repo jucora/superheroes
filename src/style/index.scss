@@ -223,6 +223,35 @@ body {
     }
   }
 
+  .author {
+    color: #fff;
+    text-align: center;
+    h1 {
+      margin-bottom: 30px;
+    }
+    img {
+      -webkit-animation: leftPanelAnimation 2s linear 0s;
+      -moz-animation: leftPanelAnimation 2s linear 0s;
+      -ms-animation: leftPanelAnimation 2s linear 0s;
+      -o-animation: leftPanelAnimation 2s linear 0s;
+      animation: leftPanelAnimation 2s linear 0s;
+      border-radius: 100%;
+      width: 400px;
+    }
+    .portfolioLink {
+      -webkit-animation: rightPanelAnimation 4s linear 0s;
+      -moz-animation: rightPanelAnimation 4s linear 0s;
+      -ms-animation: rightPanelAnimation 4s linear 0s;
+      -o-animation: rightPanelAnimation 4s linear 0s;
+      animation: rightPanelAnimation 4s linear 0s;
+      a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: underline;
+      }
+    }
+  }
+
   .optionInfo {
     display: flex;
     padding: 20px;
