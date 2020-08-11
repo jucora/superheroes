@@ -7,7 +7,7 @@ const Title = () => {
       <header>
         <h1>SUPERHEROES</h1>
         <div className="title-subtitle">
-          Search and get information about your favorite superhero
+          Search and get information about your favorite superhero!
         </div>
         <div>
           <NavLink

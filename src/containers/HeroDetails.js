@@ -12,9 +12,9 @@ const HeroDetails = (props) => {
   const createOptionResults = () => {
     window.scrollTo(0, 250);
 
-    const { appearance } = currentHero;
-    const { gender } = appearance;
     if (option === "appearance") {
+      const { appearance } = currentHero;
+      const { gender } = appearance;
       return (
         <div>
           <p>Gender: {gender}</p>
@@ -42,6 +42,19 @@ const HeroDetails = (props) => {
           <p>Full-name: {biography["full-name"]}</p>
           <p>Place-of-birth: {biography["place-of-birth"]}</p>
           <p>Publisher: {biography.publisher}</p>
+        </div>
+      );
+    }
+    if (option === "powerstats") {
+      const { powerstats } = currentHero;
+      return (
+        <div>
+          <p>Combat: {powerstats.combat}</p>
+          <p>Durability: {powerstats.durability}</p>
+          <p>Intelligence: {powerstats.intelligence}</p>
+          <p>Power: {powerstats.power}</p>
+          <p>Speed: {powerstats.speed}</p>
+          <p>Strength: {powerstats.strength}</p>
         </div>
       );
     }

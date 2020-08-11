@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Proptypes from "prop-types";
 import { updateHeroes } from "../actions/index";
 import heroApi from "../api/heroApi";
+import { store } from "../components/App";
 
 class HeroForm extends React.Component {
   constructor(props) {
@@ -27,6 +28,8 @@ class HeroForm extends React.Component {
         updateHeroes(data);
       }
     });
+
+    console.log("store", store.getState());
   }
 
   render() {
