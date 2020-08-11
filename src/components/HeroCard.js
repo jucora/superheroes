@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { addCurrentHero, addCurrentOption } from "../actions/index";
 import { connect } from "react-redux";
 
-function HeroCard(props) {
+const HeroCard = (props) => {
   const { id, name, image, addCurrentHero, hero, addCurrentOption } = props;
   return (
     <div className="heroCard">
@@ -58,7 +58,7 @@ function HeroCard(props) {
       </div>
     </div>
   );
-}
+};
 
 const matchDispatchToProps = (dispatch) => ({
   addCurrentHero: (hero) => {

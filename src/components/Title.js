@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Title() {
+const Title = () => {
   return (
     <div className="title">
       <header>
@@ -29,6 +29,6 @@ function Title() {
       </header>
     </div>
   );
-}
+};
 
 export default Title;

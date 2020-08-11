@@ -1,17 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { store } from "../components/App";
 
 const HeroDetails = (props) => {
-  console.log("state now", store.getState());
   const { option } = props;
   const { match } = props;
-  const { id } = match.params; // Location index
+  const { id } = match.params;
   const { heroResults } = props;
   const currentHero = heroResults[id];
 
   const createOptionResults = () => {
+    window.scrollTo(0, 250);
+
     const { appearance } = currentHero;
     const { gender } = appearance;
     if (option === "appearance") {
