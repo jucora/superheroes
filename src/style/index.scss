@@ -189,13 +189,12 @@ body {
     display: flex;
     align-items: center;
     background: rgb(0, 0, 0);
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(248, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 1) 100%
-      );
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(248, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
     justify-content: center;
     margin-bottom: 2rem;
     padding: 20px;
@@ -301,13 +300,18 @@ body {
       box-sizing: border-box;
       color: #fff;
       background-color: #000;
-      font-size: 34px;
+      font-size: 28px;
       float: left;
       padding: 20px;
       text-align: center;
       width: 50%;
       height: auto;
       opacity: 0.5;
+
+      h3 {
+        margin-bottom: 10px;
+        text-decoration: underline;
+      }
 
       p {
         margin-bottom: 10px;

@@ -1,15 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const hideInput = () => {
-  const input = document.querySelector('.searchHeroInput');
+  const input = document.querySelector(".searchHeroInput");
   if (input) {
-    input.style.display = 'none';
+    input.style.display = "none";
   }
 };
 
-const HeroDetails = props => {
+const HeroDetails = (props) => {
   hideInput();
   const { option } = props;
   const { match } = props;
@@ -20,105 +20,57 @@ const HeroDetails = props => {
   const createOptionResults = () => {
     window.scrollTo(0, 50);
 
-    if (option === 'appearance') {
+    if (option === "appearance") {
       const { appearance } = currentHero;
       const { gender } = appearance;
       return (
         <div>
-          <p>
-            Gender:
-            {gender}
-          </p>
-          <p>
-            Eye Color:
-            {appearance['eye-color']}
-          </p>
-          <p>
-            Hair Color:
-            {appearance['hair-color']}
-          </p>
-          <p>
-            Height:
-            {`${appearance.height[0]} - ${appearance.height[1]}`}
-          </p>
-          <p>
-            Race:
-            {appearance.race}
-          </p>
-          <p>
-            weight:
-            {`${appearance.weight[0]} - ${appearance.weight[1]}`}
-          </p>
+          <h3>Gender</h3>
+          <p>{gender}</p>
+          <h3>Eye Color</h3>
+          <p>{appearance["eye-color"]}</p>
+          <h3>Hair Color</h3>
+          <p>{appearance["hair-color"]}</p>
+          <h3>Height</h3>
+          <p>{`${appearance.height[0]} - ${appearance.height[1]}`}</p>
+          <h3>Race</h3>
+          <p>{appearance.race}</p>
+          <h3>weight</h3>
+          <p>{`${appearance.weight[0]} - ${appearance.weight[1]}`}</p>
         </div>
       );
     }
-    if (option === 'biography') {
+    if (option === "biography") {
       const { biography } = currentHero;
       return (
         <div>
-          <p>
-            Aliases:
-            {' '}
-            {biography.aliases.forEach(alias => ({
-              alias,
-            }))}
-          </p>
-          <p>
-            Alignment:
-            {biography.alignment}
-          </p>
-          <p>
-            Alter-egos:
-            {biography['alter-egos']}
-          </p>
-          <p>
-            First-appearance:
-            {biography['first-appearance']}
-          </p>
-          <p>
-            Full-name:
-            {biography['full-name']}
-          </p>
-          <p>
-            Place-of-birth:
-            {biography['place-of-birth']}
-          </p>
-          <p>
-            Publisher:
-            {biography.publisher}
-          </p>
+          <h3>Aliases</h3>
+          {biography.aliases.map((alias) => (
+            <p>{alias}</p>
+          ))}
+          <h3>Alignment</h3> <p>{biography.alignment}</p>
+          <h3>Alter-egos</h3> <p>{biography["alter-egos"]}</p>
+          <h3>First Appearance</h3>
+          <p>{biography["first-appearance"]}</p>
+          <h3>Full-name</h3> <p>{biography["full-name"]}</p>
+          <h3>Place Of Birth</h3> <p>{biography["place-of-birth"]}</p>
+          <h3>Publisher</h3> <p>{biography.publisher}</p>
         </div>
       );
     }
-    if (option === 'powerstats') {
+    if (option === "powerstats") {
       const { powerstats } = currentHero;
       return (
         <div>
-          <p>
-            Combat:
-            {powerstats.combat}
-          </p>
-
-          <p>
-            Durability:
-            {powerstats.durability}
-          </p>
-          <p>
-            Intelligence:
-            {powerstats.intelligence}
-          </p>
-          <p>
-            Power:
-            {powerstats.power}
-          </p>
-          <p>
-            Speed:
-            {powerstats.speed}
-          </p>
-          <p>
-            Strength:
-            {powerstats.strength}
-          </p>
+          <h3>Combat</h3> <p>{powerstats.combat}</p>
+          <h3>Durability</h3> <p>{powerstats.durability}</p>
+          <h3>Intelligence</h3> <p>{powerstats.intelligence}</p>
+          <h3>Power</h3>
+          <p>{powerstats.power}</p>
+          <h3>Speed</h3>
+          <p>{powerstats.speed}</p>
+          <h3>Strength</h3>
+          <p>{powerstats.strength}</p>
         </div>
       );
     }
@@ -148,7 +100,7 @@ HeroDetails.propTypes = {
   option: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
   option: state.heroReducer.option,
   currentHero: state.heroReducer.currentHero,
