@@ -1,7 +1,7 @@
 <h1 align="center">Superhero React Project</h1>
 
 <p align="center">
-  <img src ='src/img/preview.jpg' alt='Image of Superhero React Project'>
+  <img src ='img/demo.gif' alt='Superhero React Project gif'>
 </p>
 
 # :arrow_right: [Live Demo](https://superheroes-react-project.herokuapp.com/#/)
