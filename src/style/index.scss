@@ -189,12 +189,13 @@ body {
     display: flex;
     align-items: center;
     background: rgb(0, 0, 0);
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(248, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(248, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+      );
     justify-content: center;
     margin-bottom: 2rem;
     padding: 20px;
