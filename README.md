@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Superhero React Project</h1>
 
-## Available Scripts
+<p align="center">
+  <img src ='src/img/preview.jpg' alt='Image of Superhero React Project'>
+</p>
 
-In the project directory, you can run:
+# :arrow_right: [Live Demo](https://superheroes-react-project.herokuapp.com/#/)
 
-### `yarn start`
+## Author
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+:man: Julian Belmonte
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Github: [Julian Belmonte](https://github.com/jucora)
+- Twitter: [@Julian Belmonte](https://www.twitter.com/JulianBelmonte)
+- Linkedin: [Julian Belmonte](https://www.linkedin.com/in/julianbel)
 
-### `yarn test`
+## :pencil: Main Description
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project consists of the implementation of the fundamental concepts of the ReactJS library, as well as the use of Redux to manage the application state in an orderly manner and based on a single state throughout the application.
 
-### `yarn build`
+In order to offer persistence in the data, I decided to join Redux with LocalStorage, so that each change made in the Redux Store is automatically saved in the user's LocalStorage, in this way it is possible to refresh the browser and the information will remain available.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For more information about the project requirements, please follow the next link: [React capstone Project](https://www.notion.so/Catalogue-of-Dog-Clothes-8bf1512b8ab34fa28848beb8ab698a32)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## :lock_with_ink_pen: Superhero Api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+  <img src ='src/img/api.jpg' alt='Image of the Api'>
+</p>
 
-### `yarn eject`
+I want to give my thanks to Superhero API since it is an excellent API with which I have been able to carry out this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The Superhero API, is a quantified and programatically accessible data source of all superheroes from both the comic universe. We've taken all the stuff and put it together in a form that is easier to consume with software. Then we made an API so you can consume it in a hassle free manner. Click the next link to access to the [API](https://www.superheroapi.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to install the App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Please clone the repository by running the next comand in your machine:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<pre><code>git clone https://github.com/jucora/superheroes.git</code></pre>
 
-## Learn More
+2. Next, run the next command to install all project dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   For Yarn: <pre><code>yarn install</code></pre>
+   For npm: <pre><code>npm install</code></pre>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to run the app locally
 
-### Code Splitting
+1. Get into the folder of the project by running the next command:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<pre><code>cd superheroes</code></pre>
 
-### Analyzing the Bundle Size
+2. Start your local server by running the next command:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+   For Yarn: <pre><code>yarn start</code></pre>
+   For npm: <pre><code>npm start</code></pre>
 
-### Making a Progressive Web App
+## :computer: Library, Languages and technologies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- React
+- React-DOM
+- Redux
+- JSX
+- SCSS
+- Node.js
+- prop-types
+- npm
+- Javascript
+- LocalStorage
 
-### Advanced Configuration
+## Report Issues
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Please feel free to make a contribution, report any issue, feature request or provide any feedback. Click [here](https://github.com/jucora/superheroes/issues)
 
-### Deployment
+## Support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Feel free to drop a like, that would support me a lot.
