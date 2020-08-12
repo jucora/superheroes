@@ -4,7 +4,7 @@ import {
   ADD_CURRENT_OPTION,
 } from "../actions/index";
 
-const initialState = {
+export const initialState = {
   heroResults: [],
   currentHero: null,
   option: null,

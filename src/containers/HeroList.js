@@ -1,10 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import HeroCard from "../components/HeroCard";
+import HeroCard from "../containers/HeroCard";
+
+const displayInput = () => {
+  const input = document.querySelector(".searchHeroInput");
+  if (input) {
+    input.style.display = "flex";
+  }
+};
 
 class HeroList extends React.Component {
   render() {
+    displayInput();
     const { heroResults } = this.props;
     return (
       <div className="heroList">

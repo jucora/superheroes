@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Proptypes from "prop-types";
 import { updateHeroes } from "../actions/index";
 import heroApi from "../api/heroApi";
-import { store } from "../components/App";
+import { store } from "../index";
 
 class HeroForm extends React.Component {
   constructor(props) {

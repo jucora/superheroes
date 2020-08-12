@@ -2,7 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+const hideInput = () => {
+  const input = document.querySelector(".searchHeroInput");
+  if (input) {
+    input.style.display = "none";
+  }
+};
+
 const HeroDetails = (props) => {
+  hideInput();
   const { option } = props;
   const { match } = props;
   const { id } = match.params;
@@ -10,7 +18,7 @@ const HeroDetails = (props) => {
   const currentHero = heroResults[id];
 
   const createOptionResults = () => {
-    window.scrollTo(0, 250);
+    window.scrollTo(0, 50);
 
     if (option === "appearance") {
       const { appearance } = currentHero;
