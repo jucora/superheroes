@@ -189,12 +189,13 @@ body {
     display: flex;
     align-items: center;
     background: rgb(0, 0, 0);
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(248, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(248, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+      );
     justify-content: center;
     margin-bottom: 2rem;
     padding: 20px;
@@ -226,25 +227,29 @@ body {
   .author {
     color: #fff;
     text-align: center;
+
     h1 {
       margin-bottom: 30px;
       margin-top: 50px;
     }
+
     img {
-      -webkit-animation: leftPanelAnimation 2s linear 0s;
-      -moz-animation: leftPanelAnimation 2s linear 0s;
-      -ms-animation: leftPanelAnimation 2s linear 0s;
-      -o-animation: leftPanelAnimation 2s linear 0s;
+      -webkit-animation: leftpanelanimation 2s linear 0s;
+      -moz-animation: leftpanelanimation 2s linear 0s;
+      -ms-animation: leftpanelanimation 2s linear 0s;
+      -o-animation: leftpanelanimation 2s linear 0s;
       animation: leftPanelAnimation 2s linear 0s;
       border-radius: 100%;
       width: 400px;
     }
+
     .portfolioLink {
-      -webkit-animation: rightPanelAnimation 4s linear 0s;
-      -moz-animation: rightPanelAnimation 4s linear 0s;
-      -ms-animation: rightPanelAnimation 4s linear 0s;
-      -o-animation: rightPanelAnimation 4s linear 0s;
+      -webkit-animation: rightpanelanimation 4s linear 0s;
+      -moz-animation: rightpanelanimation 4s linear 0s;
+      -ms-animation: rightpanelanimation 4s linear 0s;
+      -o-animation: rightpanelanimation 4s linear 0s;
       animation: rightPanelAnimation 4s linear 0s;
+
       a {
         color: #fff;
         font-size: 24px;
@@ -258,10 +263,10 @@ body {
     padding: 20px;
 
     .left {
-      -webkit-animation: leftPanelAnimation 2s linear 0s;
-      -moz-animation: leftPanelAnimation 2s linear 0s;
-      -ms-animation: leftPanelAnimation 2s linear 0s;
-      -o-animation: leftPanelAnimation 2s linear 0s;
+      -webkit-animation: leftpanelanimation 2s linear 0s;
+      -moz-animation: leftpanelanimation 2s linear 0s;
+      -ms-animation: leftpanelanimation 2s linear 0s;
+      -o-animation: leftpanelanimation 2s linear 0s;
       animation: leftPanelAnimation 2s linear 0s;
       box-sizing: border-box;
       text-align: center;
@@ -285,10 +290,10 @@ body {
     }
 
     .right {
-      -webkit-animation: rightPanelAnimation 4s linear 0s;
-      -moz-animation: rightPanelAnimation 4s linear 0s;
-      -ms-animation: rightPanelAnimation 4s linear 0s;
-      -o-animation: rightPanelAnimation 4s linear 0s;
+      -webkit-animation: rightpanelanimation 4s linear 0s;
+      -moz-animation: rightpanelanimation 4s linear 0s;
+      -ms-animation: rightpanelanimation 4s linear 0s;
+      -o-animation: rightpanelanimation 4s linear 0s;
       animation: rightPanelAnimation 4s linear 0s;
       display: flex;
       align-items: center;
@@ -306,18 +311,6 @@ body {
 
       p {
         margin-bottom: 10px;
-      }
-      .barContainer {
-        background: gray;
-        border-radius: 5%;
-        height: 25px;
-        width: 100%;
-        .progressBar {
-          background-color: aqua;
-
-          height: 25px;
-          z-index: 10;
-        }
       }
     }
   }

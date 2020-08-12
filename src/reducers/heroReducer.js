@@ -2,7 +2,7 @@ import {
   UPDATE_HEROES,
   ADD_CURRENT_HERO,
   ADD_CURRENT_OPTION,
-} from "../actions/index";
+} from '../actions/index';
 
 export const initialState = {
   heroResults: [],

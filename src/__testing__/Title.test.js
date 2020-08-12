@@ -1,32 +1,32 @@
-import React from "react";
-import { render, cleanup } from "@testing-library/react";
-import Title from "../components/Title";
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
+import Title from '../components/Title';
 
 afterEach(cleanup);
 
-it("should take a snapshot", () => {
+it('should take a snapshot', () => {
   const { asFragment } = render(<Title />);
   expect(asFragment(<Title />)).toMatchSnapshot();
 });
 
-it("should display a main title", () => {
+it('should display a main title', () => {
   const { getByTestId } = render(<Title />);
-  expect(getByTestId("mainTitle")).toHaveTextContent("SUPERHEROES");
+  expect(getByTestId('mainTitle')).toHaveTextContent('SUPERHEROES');
 });
 
-it("should display a subtitle", () => {
+it('should display a subtitle', () => {
   const { getByTestId } = render(<Title />);
-  expect(getByTestId("title-subtitle")).toHaveTextContent(
-    "Search and get information about your favorite superhero!"
+  expect(getByTestId('title-subtitle')).toHaveTextContent(
+    'Search and get information about your favorite superhero!',
   );
 });
 
-it("should have a link to redirect to hero List", () => {
+it('should have a link to redirect to hero List', () => {
   const { getByTestId } = render(<Title />);
-  expect(getByTestId("listLink")).toHaveTextContent("List");
+  expect(getByTestId('listLink')).toHaveTextContent('List');
 });
 
-it("should have a link to redirect to the Author section", () => {
+it('should have a link to redirect to the Author section', () => {
   const { getByTestId } = render(<Title />);
-  expect(getByTestId("aboutLink")).toHaveTextContent("About");
+  expect(getByTestId('aboutLink')).toHaveTextContent('About');
 });
