@@ -1,7 +1,7 @@
 <h1 align="center">Superhero React Project</h1>
 
 <p align="center">
-  <img src ='src/img/demo.gif' alt='Superhero React Project gif'>
+  <img src ='src/img/preview.jpg' alt='Superhero React Project image'>
 </p>
 
 # :arrow_right: [Live Demo](https://superheroes-react-project.herokuapp.com/#/)
@@ -21,6 +21,10 @@ This project consists of the implementation of the fundamental concepts of the R
 In order to offer persistence in the data, I decided to join Redux with LocalStorage, so that each change made in the Redux Store is automatically saved in the user's LocalStorage, in this way it is possible to refresh the browser and the information will remain available.
 
 For more information about the project requirements, please follow the next link: [React capstone Project](https://www.notion.so/Catalogue-of-Dog-Clothes-8bf1512b8ab34fa28848beb8ab698a32)
+
+<p align="center">
+  <img src ='src/img/demo.gif' alt='Superhero React Project gif'>
+</p>
 
 ## :lock_with_ink_pen: Superhero Api
 
