@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./style/index.scss";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import App from "./components/App";
-import storage from "./localStorage/storage";
-import rootReducer from "./reducers/index";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './style/index.scss';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from './components/App';
+import storage from './localStorage/storage';
+import rootReducer from './reducers/index';
 
 const persistState = storage.loadState();
 
@@ -21,7 +21,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 export default store;

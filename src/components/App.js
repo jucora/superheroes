@@ -1,12 +1,12 @@
-import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import React from 'react';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
-import Title from "./Title";
-import HeroList from "../containers/HeroList";
-import Footer from "./Footer";
-import Author from "./Author";
-import HeroDetails from "../containers/HeroDetails";
-import HeroForm from "../containers/HeroForm";
+import Title from './Title';
+import HeroList from '../containers/HeroList';
+import Footer from './Footer';
+import Author from './Author';
+import HeroDetails from '../containers/HeroDetails';
+import HeroForm from '../containers/HeroForm';
 
 const App = () => (
   <Router>
