@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroDetails main structure should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="optionInfo"
+  >
+    <div
+      class="left"
+    >
+      <p>
+        batman
+      </p>
+      <img
+        alt="batman"
+        src="batman.png"
+      />
+    </div>
+    <div
+      class="right"
+    >
+      <div>
+        <h3>
+          Gender
+        </h3>
+        <p>
+          male
+        </p>
+        <h3>
+          Eye Color
+        </h3>
+        <p />
+        <h3>
+          Hair Color
+        </h3>
+        <p />
+        <h3>
+          Height
+        </h3>
+        <p>
+          5'10 - 178 cm
+        </p>
+        <h3>
+          Race
+        </h3>
+        <p />
+        <h3>
+          weight
+        </h3>
+        <p>
+          170 lb - 77 kg
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
