@@ -4,10 +4,11 @@
   <img src ='src/img/preview.jpg' alt='Superhero React Project image'>
 </p>
 
-## Live Demo:
 
-<strong>IMPORTANT:</strong> In order to avoid CORS restrictions for API request
-from an unknown origin, Google Chrome offers an extension, so before you watch the live demo, please add the extension in your brower: [Click Here](https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US)
+
+## :warning: <strong>IMPORTANT: </strong>:warning:
+
+In order to avoid CORS restrictions for API request from an unknown origin, Google Chrome offers an extension, so before you watch the live demo or run the app in your local machine, please add the extension in your brower: [Click Here](https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US)
 
 # :arrow_right: [Live Demo](https://superheroes-react-project.herokuapp.com/#/)
 
