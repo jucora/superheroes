@@ -1,16 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import HeroCard from './HeroCard';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import HeroCard from "./HeroCard";
 
 const displayInput = () => {
-  const input = document.querySelector('.searchHeroInput');
+  const input = document.querySelector(".searchHeroInput");
   if (input) {
-    input.style.display = 'flex';
+    input.style.display = "block";
   }
 };
 
-const HeroList = props => {
+const HeroList = (props) => {
   displayInput();
   const { heroResults } = props;
   return (
@@ -32,7 +32,7 @@ HeroList.propTypes = {
   heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
 });
 

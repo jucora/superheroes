@@ -1,9 +1,9 @@
-import React from 'react';
-import { NavLink, HashRouter as Router } from 'react-router-dom';
+import React from "react";
+import { NavLink, HashRouter as Router } from "react-router-dom";
 
 const Title = () => (
   <Router>
-    <div className="title">
+    <div className="title row">
       <header>
         <h1 data-testid="mainTitle">SUPERHEROES</h1>
         <div data-testid="title-subtitle" className="title-subtitle">

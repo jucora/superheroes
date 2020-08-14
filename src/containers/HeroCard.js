@@ -1,28 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addCurrentHero, addCurrentOption } from '../actions/index';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { addCurrentHero, addCurrentOption } from "../actions/index";
 
-const HeroCard = props => {
-  const {
-    id, name, image, addCurrentHero, hero, addCurrentOption,
-  } = props;
+const HeroCard = (props) => {
+  const { id, name, image, addCurrentHero, hero, addCurrentOption } = props;
   return (
-    <div className="heroCard">
-      <div className="cardImageContainer">
+    <div className="heroCard col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div className="cardContainer">
         <h1>{name}</h1>
         <img src={image} width="300" height="300" alt={`${name}`} />
         <hr />
 
         <Link
           to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
         >
           <button
             onClick={() => {
               addCurrentHero(hero);
-              addCurrentOption('appearance');
+              addCurrentOption("appearance");
             }}
             type="button"
           >
@@ -31,12 +29,12 @@ const HeroCard = props => {
         </Link>
         <Link
           to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
         >
           <button
             onClick={() => {
               addCurrentHero(hero);
-              addCurrentOption('biography');
+              addCurrentOption("biography");
             }}
             type="button"
           >
@@ -45,12 +43,12 @@ const HeroCard = props => {
         </Link>
         <Link
           to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
         >
           <button
             onClick={() => {
               addCurrentHero(hero);
-              addCurrentOption('powerstats');
+              addCurrentOption("powerstats");
             }}
             type="button"
           >
@@ -62,11 +60,11 @@ const HeroCard = props => {
   );
 };
 
-const matchDispatchToProps = dispatch => ({
-  addCurrentHero: hero => {
+const matchDispatchToProps = (dispatch) => ({
+  addCurrentHero: (hero) => {
     dispatch(addCurrentHero(hero));
   },
-  addCurrentOption: option => {
+  addCurrentOption: (option) => {
     dispatch(addCurrentOption(option));
   },
 });
