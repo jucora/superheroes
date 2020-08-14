@@ -22,7 +22,7 @@ class HeroForm extends React.Component {
     const { heroName } = this.state;
 
     if (heroName === "") return;
-    heroApi.getByName(heroName).then((data) => {
+    heroApi.getHeroByName(heroName).then((data) => {
       if (data) {
         updateHeroes(data);
       }
