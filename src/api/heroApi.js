@@ -5,10 +5,16 @@ const token = '10221160774421792';
 
 const heroApi = (() => {
   const getByName = name => new Promise((resolve, reject) => {
-    axios.get(`${mainURL + token}/search/${name}`).then(data => {
-      resolve(data.data.results);
-      reject(new Error('something bad happened'));
-    });
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/${
+          mainURL + token
+        }/search/${name}`,
+      )
+      .then(data => {
+        resolve(data.data.results);
+        reject(new Error('something bad happened'));
+      });
   });
 
   return {
