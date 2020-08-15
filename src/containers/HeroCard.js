@@ -1,13 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { addCurrentHero, addCurrentOption } from "../actions/index";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addCurrentHero, addCurrentOption } from '../actions/index';
 
-const HeroCard = (props) => {
-  const { id, name, image, addCurrentHero, hero, addCurrentOption } = props;
+const HeroCard = props => {
+  const {
+    id, name, image, addCurrentHero, hero, addCurrentOption,
+  } = props;
 
-  const setCurrentValues = (option) => {
+  const setCurrentValues = option => {
     addCurrentHero(hero);
     addCurrentOption(option);
   };
@@ -19,30 +21,30 @@ const HeroCard = (props) => {
         <img src={image} width="300" height="300" alt={`${name}`} />
         <hr />
 
-        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/details/${id}`} style={{ textDecoration: 'none' }}>
           <button
             onClick={() => {
-              setCurrentValues("appearance");
+              setCurrentValues('appearance');
             }}
             type="button"
           >
             Appearance
           </button>
         </Link>
-        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/details/${id}`} style={{ textDecoration: 'none' }}>
           <button
             onClick={() => {
-              setCurrentValues("biography");
+              setCurrentValues('biography');
             }}
             type="button"
           >
             Biography
           </button>
         </Link>
-        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/details/${id}`} style={{ textDecoration: 'none' }}>
           <button
             onClick={() => {
-              setCurrentValues("powerstats");
+              setCurrentValues('powerstats');
             }}
             type="button"
           >
@@ -54,11 +56,11 @@ const HeroCard = (props) => {
   );
 };
 
-const matchDispatchToProps = (dispatch) => ({
-  addCurrentHero: (hero) => {
+const matchDispatchToProps = dispatch => ({
+  addCurrentHero: hero => {
     dispatch(addCurrentHero(hero));
   },
-  addCurrentOption: (option) => {
+  addCurrentOption: option => {
     dispatch(addCurrentOption(option));
   },
 });

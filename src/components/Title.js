@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, HashRouter as Router } from "react-router-dom";
+import React from 'react';
+import { NavLink, HashRouter as Router } from 'react-router-dom';
 
 const Title = () => (
   <Router>

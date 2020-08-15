@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import HeroCard from "../containers/HeroCard";
-import heroApi from "../api/heroApi";
-import { updateHeroes } from "../actions/index";
-import HeroForm from "../containers/HeroForm";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import HeroCard from '../containers/HeroCard';
+import heroApi from '../api/heroApi';
+import { updateHeroes } from '../actions/index';
+import HeroForm from '../containers/HeroForm';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -15,7 +15,7 @@ class Home extends React.Component {
       let random = 0;
       while (record <= 9) {
         random = Math.floor(Math.random() * 731) + 1;
-        heroApi.getHeroById(random).then((data) => {
+        heroApi.getHeroById(random).then(data => {
           if (data) {
             allHeroes.push(data);
           }
@@ -31,7 +31,6 @@ class Home extends React.Component {
 
   render() {
     const { heroResults } = this.props;
-    console.log("hero res", typeof heroResults);
     return (
       <div className="heroList">
         <HeroForm />
@@ -51,14 +50,15 @@ class Home extends React.Component {
 
 Home.propTypes = {
   heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateHeroes: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   heroResults: state.heroReducer.heroResults,
 });
 
-const matchDispatchToProps = (dispatch) => ({
-  updateHeroes: (results) => {
+const matchDispatchToProps = dispatch => ({
+  updateHeroes: results => {
     dispatch(updateHeroes(results));
   },
 });
