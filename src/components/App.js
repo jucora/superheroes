@@ -1,22 +1,27 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
-import Title from './Title';
-import HeroList from '../containers/HeroList';
-import Footer from './Footer';
-import Author from './Author';
-import HeroDetails from '../containers/HeroDetails';
-import HeroForm from '../containers/HeroForm';
+import Title from "./Title";
+import Footer from "./Footer";
+import Author from "./Author";
 
-const App = () => (
-  <Router>
-    <Title />
-    <HeroForm />
-    <Route exact path="/" component={HeroList} />
-    <Route path="/about" component={Author} />
-    <Route path="/details/:id" component={HeroDetails} />
-    <Footer />
-  </Router>
-);
+import Home from "../pages/Home";
+import Details from "../pages/Details";
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Title />
+        <Switch>
+          <Route path="/about" component={Author} />
+          <Route path="/details/:id" component={Details} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+        <Footer />
+      </Router>
+    );
+  }
+}
 
 export default App;

@@ -6,49 +6,43 @@ import { addCurrentHero, addCurrentOption } from "../actions/index";
 
 const HeroCard = (props) => {
   const { id, name, image, addCurrentHero, hero, addCurrentOption } = props;
+
+  const setCurrentValues = (option) => {
+    addCurrentHero(hero);
+    addCurrentOption(option);
+  };
+
   return (
-    <div className="heroCard col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div className="heroCard col-lg-4 col-md-6 col-sm-12, col-xs-12">
       <div className="cardContainer">
         <h1>{name}</h1>
         <img src={image} width="300" height="300" alt={`${name}`} />
         <hr />
 
-        <Link
-          to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
           <button
             onClick={() => {
-              addCurrentHero(hero);
-              addCurrentOption("appearance");
+              setCurrentValues("appearance");
             }}
             type="button"
           >
             Appearance
           </button>
         </Link>
-        <Link
-          to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
           <button
             onClick={() => {
-              addCurrentHero(hero);
-              addCurrentOption("biography");
+              setCurrentValues("biography");
             }}
             type="button"
           >
             Biography
           </button>
         </Link>
-        <Link
-          to={{ pathname: `/details/${id}` }}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={`/details/${id}`} style={{ textDecoration: "none" }}>
           <button
             onClick={() => {
-              addCurrentHero(hero);
-              addCurrentOption("powerstats");
+              setCurrentValues("powerstats");
             }}
             type="button"
           >

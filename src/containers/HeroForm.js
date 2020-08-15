@@ -3,13 +3,24 @@ import { connect } from "react-redux";
 import Proptypes from "prop-types";
 import { updateHeroes } from "../actions/index";
 import heroApi from "../api/heroApi";
+import HeroFilter from "../components/HeroFilter";
 
 class HeroForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { heroName: "" };
+    this.state = { heroName: "", id: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+
+  handleFilterChange(id) {
+    const { updateHeroes } = this.props;
+    heroApi.getHeroById(id).then((data) => {
+      if (data) {
+        updateHeroes([data]);
+      }
+    });
   }
 
   handleChange(e) {
@@ -31,12 +42,13 @@ class HeroForm extends React.Component {
 
   render() {
     const { heroName } = this.state;
+
     return (
       <div className="searchHeroInput .row">
-        <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div className="col-lg-4 col-md-3 col-sm-12 col-xs-12">
           <h3 className="searchTitle">SEARCH BY NAME</h3>
         </div>
-        <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <div className="col-lg-4 col-md-7 col-sm-12 col-xs-12">
           <input
             value={heroName}
             id={heroName}
@@ -46,7 +58,7 @@ class HeroForm extends React.Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="buttonContainer col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <div className="buttonContainer col-lg-4 col-md-2 col-sm-12 col-xs-12">
           <button
             className="submitButton"
             type="submit"
@@ -56,6 +68,7 @@ class HeroForm extends React.Component {
             SEARCH
           </button>
         </div>
+        <HeroFilter handleChange={this.handleFilterChange} />
       </div>
     );
   }

@@ -1,21 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import HeroCard from "./HeroCard";
+import HeroCard from "../containers/HeroCard";
 import heroApi from "../api/heroApi";
 import { updateHeroes } from "../actions/index";
-import store from "../index";
+import HeroForm from "../containers/HeroForm";
 
-console.log(store);
-
-const displayInput = () => {
-  const input = document.querySelector(".searchHeroInput");
-  if (input) {
-    input.style.display = "block";
-  }
-};
-
-class HeroList extends React.Component {
+class Home extends React.Component {
   componentDidMount() {
     const { updateHeroes, heroResults } = this.props;
     const allHeroes = [];
@@ -39,10 +30,11 @@ class HeroList extends React.Component {
   }
 
   render() {
-    displayInput();
     const { heroResults } = this.props;
+    console.log("hero res", typeof heroResults);
     return (
       <div className="heroList">
+        <HeroForm />
         {heroResults.map((hero, index) => (
           <HeroCard
             id={index}
@@ -57,7 +49,7 @@ class HeroList extends React.Component {
   }
 }
 
-HeroList.propTypes = {
+Home.propTypes = {
   heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
@@ -71,4 +63,4 @@ const matchDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, matchDispatchToProps)(HeroList);
+export default connect(mapStateToProps, matchDispatchToProps)(Home);

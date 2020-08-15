@@ -25,7 +25,7 @@
 
 [class*="col-"] {
   float: left;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 /* ANIMATIONS */
@@ -221,7 +221,8 @@ body {
       );
 
       margin-bottom: 2rem;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
+
       .searchTitle {
         color: #fff;
         margin-right: 20px;
@@ -236,7 +237,7 @@ body {
       }
       .buttonContainer {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         button {
           background: green;
@@ -249,6 +250,15 @@ body {
           &:hover {
             border: 3px solid #fff;
           }
+        }
+      }
+      .heroFilter {
+        display: flex;
+        justify-content: center;
+        select {
+          font-size: 12px;
+          padding: 10px;
+          width: 50%;
         }
       }
     }

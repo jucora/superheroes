@@ -2,15 +2,7 @@ import React from "react";
 
 const authorImage = require("../img/julian.jpg");
 
-const hideInput = () => {
-  const input = document.querySelector(".searchHeroInput");
-  if (input) {
-    input.style.display = "none";
-  }
-};
-
 const Author = () => {
-  hideInput();
   return (
     <div className="author row">
       <div className="col-lg-12">

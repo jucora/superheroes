@@ -2,15 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-const hideInput = () => {
-  const input = document.querySelector(".searchHeroInput");
-  if (input) {
-    input.style.display = "none";
-  }
-};
-
-const HeroDetails = (props) => {
-  hideInput();
+const Details = (props) => {
   const { option } = props;
   const { match } = props;
   const { id } = match.params;
@@ -92,7 +84,7 @@ const HeroDetails = (props) => {
   );
 };
 
-HeroDetails.propTypes = {
+Details.propTypes = {
   heroResults: PropTypes.arrayOf(PropTypes.object).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -108,4 +100,4 @@ const mapStateToProps = (state) => ({
   currentHero: state.heroReducer.currentHero,
 });
 
-export default connect(mapStateToProps, null)(HeroDetails);
+export default connect(mapStateToProps, null)(Details);
