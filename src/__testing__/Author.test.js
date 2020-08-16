@@ -1,15 +1,9 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import Author from '../components/Author';
 
-afterEach(cleanup);
 
-configure({ adapter: new Adapter() });
 it('should take a snapshot', () => {
-  const { asFragment } = render(<Author />);
-  expect(asFragment(<Author />)).toMatchSnapshot();
+  const wrapper = render(<Author />);
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should contain a div with className author', () => {
@@ -23,7 +17,7 @@ it('should contain a h1', () => {
 });
 
 it('should contain the text: JULIAN BELMONTE inside the h1 tag', () => {
-  const wrapper = shallow(<Author />);
+  const wrapper = mount(<Author />);
   expect(wrapper.find('h1').text()).toBe('JULIAN BELMONTE');
 });
 
