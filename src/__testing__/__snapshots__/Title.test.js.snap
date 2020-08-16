@@ -1,40 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should take a snapshot 1`] = `
-<DocumentFragment>
+<HashRouter>
   <div
-    class="title"
+    className="title row"
   >
     <header>
-      <h1
-        data-testid="mainTitle"
-      >
+      <h1>
         SUPERHEROES
       </h1>
       <div
-        class="title-subtitle"
-        data-testid="title-subtitle"
+        className="title-subtitle"
       >
         Search and get information about your favorite superhero!
       </div>
       <div>
-        <a
-          aria-current="page"
-          class="nav-link nav-link-active"
-          data-testid="listLink"
-          href="#/"
+        <NavLink
+          activeClassName="nav-link-active"
+          className="nav-link"
+          exact={true}
+          to="/"
         >
           List
-        </a>
-        <a
-          class="nav-link"
-          data-testid="aboutLink"
-          href="#/about"
+        </NavLink>
+        <NavLink
+          activeClassName="nav-link-active"
+          className="nav-link"
+          to="/about"
         >
           About
-        </a>
+        </NavLink>
       </div>
     </header>
   </div>
-</DocumentFragment>
+</HashRouter>
 `;

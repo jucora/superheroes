@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should take a snapshot 1`] = `
-<DocumentFragment>
+<div
+  class="author row"
+>
   <div
-    class="author"
+    class="col-lg-12"
   >
     <h1>
       JULIAN BELMONTE
@@ -26,5 +28,5 @@ exports[`should take a snapshot 1`] = `
       </a>
     </div>
   </div>
-</DocumentFragment>
+</div>
 `;

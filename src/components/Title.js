@@ -5,13 +5,12 @@ const Title = () => (
   <Router>
     <div className="title row">
       <header>
-        <h1 data-testid="mainTitle">SUPERHEROES</h1>
-        <div data-testid="title-subtitle" className="title-subtitle">
+        <h1 >SUPERHEROES</h1>
+        <div  className="title-subtitle">
           Search and get information about your favorite superhero!
         </div>
         <div>
           <NavLink
-            data-testid="listLink"
             className="nav-link"
             activeClassName="nav-link-active"
             exact
@@ -20,7 +19,6 @@ const Title = () => (
             List
           </NavLink>
           <NavLink
-            data-testid="aboutLink"
             className="nav-link"
             activeClassName="nav-link-active"
             to="/about"
