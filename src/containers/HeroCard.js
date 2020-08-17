@@ -15,7 +15,7 @@ const HeroCard = props => {
   };
 
   return (
-    <div className="heroCard col-lg-4 col-md-6 col-sm-12, col-xs-12">
+    <div className="heroCard col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <div className="cardContainer">
         <h1>{name}</h1>
         <img src={image} width="300" height="300" alt={`${name}`} />
