@@ -1,36 +1,55 @@
+import heroReducer from '../reducers/heroReducer';
 import {
   UPDATE_HEROES,
-  updateHeroes,
   ADD_CURRENT_HERO,
-  addCurrentHero,
   ADD_CURRENT_OPTION,
-  addCurrentOption,
 } from '../actions/index';
-describe('actions', () => {
-  it('should create an action to update heroes', () => {
-    const payload = [];
-    const expectedAction = {
-      type: UPDATE_HEROES,
-      payload,
-    };
-    expect(updateHeroes(payload)).toEqual(expectedAction);
+
+describe('heroReducer', () => {
+  it('should return the initial state', () => {
+    expect(heroReducer(undefined, {})).toEqual({
+      heroResults: [],
+      currentHero: null,
+      option: null,
+    });
   });
 
-  it('should create an action to add a current hero to show its information', () => {
-    const payload = [];
-    const expectedAction = {
-      type: ADD_CURRENT_HERO,
-      payload,
-    };
-    expect(addCurrentHero(payload)).toEqual(expectedAction);
+  it('should handle UPDATE_HEROES', () => {
+    expect(
+      heroReducer(undefined, {
+        type: UPDATE_HEROES,
+        payload: [{ hero1: 'hero1' }, { hero2: 'hero2' }],
+      })
+    ).toEqual({
+      heroResults: [{ hero1: 'hero1' }, { hero2: 'hero2' }],
+      currentHero: null,
+      option: null,
+    });
   });
 
-  it('should create an action to add a current option to show hero information for a selected area(Appearance, Biography, Powerstats', () => {
-    const payload = [];
-    const expectedAction = {
-      type: ADD_CURRENT_OPTION,
-      payload,
-    };
-    expect(addCurrentOption(payload)).toEqual(expectedAction);
+  it('should handle ADD_CURRENT_HERO', () => {
+    expect(
+      heroReducer(undefined, {
+        type: ADD_CURRENT_HERO,
+        payload: [{ currentHero: 'superman' }],
+      })
+    ).toEqual({
+      heroResults: [],
+      currentHero: [{ currentHero: 'superman' }],
+      option: null,
+    });
+  });
+
+  it('should handle ADD_CURRENT_OPTION', () => {
+    expect(
+      heroReducer(undefined, {
+        type: ADD_CURRENT_OPTION,
+        payload: 'biography',
+      })
+    ).toEqual({
+      heroResults: [],
+      currentHero: null,
+      option: 'biography',
+    });
   });
 });
