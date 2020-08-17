@@ -1,16 +1,9 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+/* global React, shallow, render */
 import Footer from '../components/Footer';
 
-afterEach(cleanup);
-
-configure({ adapter: new Adapter() });
-
 it('should take a snapshot', () => {
-  const { asFragment } = render(<Footer />);
-  expect(asFragment(<Footer />)).toMatchSnapshot();
+  const wrapper = render(<Footer />);
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('renders without crashing', () => {
