@@ -1,6 +1,5 @@
 import Author from '../components/Author';
 
-
 it('should take a snapshot', () => {
   const wrapper = render(<Author />);
   expect(wrapper).toMatchSnapshot();

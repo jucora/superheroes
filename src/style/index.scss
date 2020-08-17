@@ -214,12 +214,13 @@ body {
 
     .searchHeroInput {
       background: rgb(0, 0, 0);
-      background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(248, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 1) 100%
-      );
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(248, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 1) 100%
+        );
       margin-bottom: 2rem;
       padding: 0 20px 20px 20px;
 
@@ -702,10 +703,12 @@ body {
     .searchTitle {
       text-align: center;
     }
+
     .buttonContainer {
       display: flex !important;
       justify-content: center !important;
     }
+
     .heroFilter {
       margin-top: 15px;
     }

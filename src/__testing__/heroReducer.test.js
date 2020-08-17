@@ -19,7 +19,7 @@ describe('heroReducer', () => {
       heroReducer(undefined, {
         type: UPDATE_HEROES,
         payload: [{ hero1: 'hero1' }, { hero2: 'hero2' }],
-      })
+      }),
     ).toEqual({
       heroResults: [{ hero1: 'hero1' }, { hero2: 'hero2' }],
       currentHero: null,
@@ -32,7 +32,7 @@ describe('heroReducer', () => {
       heroReducer(undefined, {
         type: ADD_CURRENT_HERO,
         payload: [{ currentHero: 'superman' }],
-      })
+      }),
     ).toEqual({
       heroResults: [],
       currentHero: [{ currentHero: 'superman' }],
@@ -45,7 +45,7 @@ describe('heroReducer', () => {
       heroReducer(undefined, {
         type: ADD_CURRENT_OPTION,
         payload: 'biography',
-      })
+      }),
     ).toEqual({
       heroResults: [],
       currentHero: null,

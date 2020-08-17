@@ -3,7 +3,6 @@ import App from '../components/App';
 import Title from '../components/Title';
 import Footer from '../components/Footer';
 
-
 it('renders correctly', () => {
   const wrapper = shallow(<App />);
   expect(wrapper).toMatchSnapshot();

@@ -6,6 +6,7 @@ import {
   ADD_CURRENT_OPTION,
   addCurrentOption,
 } from '../actions/index';
+
 describe('actions', () => {
   it('should create an action to update heroes', () => {
     const payload = [];
