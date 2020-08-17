@@ -1,3 +1,4 @@
+/* global React, shallow */
 import { HashRouter as Router, Route } from 'react-router-dom';
 import App from '../components/App';
 import Title from '../components/Title';

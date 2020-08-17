@@ -1,3 +1,4 @@
+/* global React, shallow, mount */
 import Title from '../components/Title';
 
 it('should take a snapshot', () => {

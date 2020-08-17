@@ -1,3 +1,4 @@
+/* global React, shallow, render, mount */
 import Author from '../components/Author';
 
 it('should take a snapshot', () => {

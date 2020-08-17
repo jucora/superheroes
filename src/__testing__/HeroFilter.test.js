@@ -1,3 +1,4 @@
+/* global React, shallow, sinon, render, mount */
 import HeroFilter from '../components/HeroFilter';
 
 it('should take a snapshot', () => {
