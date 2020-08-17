@@ -16,7 +16,7 @@ class Home extends React.Component {
       while (i <= 3) {
         heroApi
           .getHeroById(Math.floor(Math.random() * 731 + 1))
-          .then((data) => {
+          .then(data => {
             if (data) {
               heroes.push(data);
             }
@@ -53,12 +53,12 @@ Home.propTypes = {
   updateHeroes: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   heroResults: state.heroReducer.heroResults,
 });
 
-const matchDispatchToProps = (dispatch) => ({
-  updateHeroes: (results) => {
+const matchDispatchToProps = dispatch => ({
+  updateHeroes: results => {
     dispatch(updateHeroes(results));
   },
 });
