@@ -10,23 +10,23 @@ import heroApi from '../api/heroApi';
 class Home extends React.Component {
   componentDidMount() {
     const { updateHeroes, heroResults } = this.props;
-    const heroes = [];
     if (heroResults.length === 0) {
+      const heroes = [];
       let i = 1;
       while (i <= 3) {
         heroApi
           .getHeroById(Math.floor(Math.random() * 731 + 1))
-          .then(data => {
+          .then((data) => {
             if (data) {
               heroes.push(data);
             }
           });
         i += 1;
       }
+      setTimeout(() => {
+        updateHeroes(heroes);
+      }, 3000);
     }
-    setTimeout(() => {
-      updateHeroes(heroes);
-    }, 3000);
   }
 
   render() {
@@ -53,12 +53,12 @@ Home.propTypes = {
   updateHeroes: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   heroResults: state.heroReducer.heroResults,
 });
 
-const matchDispatchToProps = dispatch => ({
-  updateHeroes: results => {
+const matchDispatchToProps = (dispatch) => ({
+  updateHeroes: (results) => {
     dispatch(updateHeroes(results));
   },
 });
