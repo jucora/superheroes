@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<HashRouter>
+  <div
+    className="title row"
+  >
+    <header>
+      <h1>
+        SUPERHEROES
+      </h1>
+      <div
+        className="title-subtitle"
+      >
+        Search and get information about your favorite superhero!
+      </div>
+      <div>
+        <NavLink
+          activeClassName="nav-link-active"
+          className="nav-link"
+          exact={true}
+          to="/"
+        >
+          List
+        </NavLink>
+        <NavLink
+          activeClassName="nav-link-active"
+          className="nav-link"
+          to="/about"
+        >
+          About
+        </NavLink>
+      </div>
+    </header>
+  </div>
+</HashRouter>
+`;
