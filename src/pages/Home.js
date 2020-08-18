@@ -2,30 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import HeroCard from '../containers/HeroCard';
-import heroApi from '../api/heroApi';
 import { updateHeroes } from '../actions/index';
 import HeroForm from '../containers/HeroForm';
+
+import heroApi from '../api/heroApi';
 
 class Home extends React.Component {
   componentDidMount() {
     const { updateHeroes, heroResults } = this.props;
-    const allHeroes = [];
     if (heroResults.length === 0) {
-      let record = 1;
-      let random = 0;
-      while (record <= 9) {
-        random = Math.floor(Math.random() * 731) + 1;
-        heroApi.getHeroById(random).then(data => {
-          if (data) {
-            allHeroes.push(data);
-          }
-        });
-        record += 1;
+      const heroes = [];
+      let i = 1;
+      while (i <= 3) {
+        heroApi
+          .getHeroById(Math.floor(Math.random() * 731 + 1))
+          .then(data => {
+            if (data) {
+              heroes.push(data);
+            }
+          });
+        i += 1;
       }
       setTimeout(() => {
-        updateHeroes(allHeroes);
-      }, 1000);
-      clearTimeout();
+        updateHeroes(heroes);
+      }, 3000);
     }
   }
 

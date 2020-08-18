@@ -1,15 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should take a snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="footerContainer"
-  >
-    <footer>
-      <p>
-        Julian Belmonte copyright 2020
-      </p>
-    </footer>
-  </div>
-</DocumentFragment>
+<div
+  class="footerContainer"
+>
+  <footer>
+    <p>
+      Julian Belmonte copyright 2020
+    </p>
+  </footer>
+</div>
 `;
